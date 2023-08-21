@@ -1,0 +1,23 @@
+text=input('Ingresa el texto: ')
+clv=input('Ingresa el factor de cifrado: ')
+nclv=int(clv)
+ntext=''
+
+for ch in text:
+    nch=ord(ch)
+    if not ch.isalpha():
+       ntext+=ch
+       
+    if (nch>=97 and nch<=122):
+        nch+=nclv
+        while not (nch>=97 and nch<=122):
+            nch-=26
+    
+    if (nch>=65 and nch<=90):
+        nch+=nclv
+        while not (nch>=65 and nch<=90):
+            nch-=26
+            
+    ntext+=chr(nch)
+    
+print(ntext)
